@@ -1,6 +1,7 @@
-var mysql = require('mysql');
+const mysql = require('mysql'); // require: commonJS from Node.js
+// import mysql from 'mysql';  // import: ES6
 
-class Mysql{
+class Mysql {
     connection = mysql.createConnection({
         host      :  'localhost',
         user      :  'root',
@@ -9,13 +10,15 @@ class Mysql{
     });
     /*
     connection.connect();
-    connection.query('SELECT * From topic', function(err, results, fields) {
-        if(err) {
-            console.log(error);
-        }
+
+    connection.query('SELECT * From topic', function(error, results, fields) {
+        if(error) throw error;
         console.log(results)
     });
+
     connection.end();
     */
 }
+
+// exports.Mysql = Mysql;
 module.exports = Mysql;
